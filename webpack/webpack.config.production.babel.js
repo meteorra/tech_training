@@ -1,12 +1,10 @@
-'use strict';
+import baseConfig from './webpack.config.base.babel';
+import webpack from 'webpack';
+import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
-var baseConfig = require('./webpack.config.base');
-var webpack = require('webpack');
-var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const config = Object.create(baseConfig);
 
-var config = Object.create(baseConfig);
-
-Array.prototype.push.apply(config.plugins, [
+config.plugins.push(...[
     new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production')
     }),
@@ -25,9 +23,10 @@ Array.prototype.push.apply(config.plugins, [
             discardComments: {removeAll: true }
         },
         canPrint: true
-    })]);
+    })
+]);
 
 config.devtool = "source-map";
 
-module.exports = config;
+export default config;
 

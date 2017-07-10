@@ -1,11 +1,8 @@
-'use strict';
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-
-module.exports = {
+export default {
     entry: './src/index.js',
     output: {
         filename: 'tech-training.js',
