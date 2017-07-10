@@ -1,0 +1,20 @@
+{
+  "name": "tech-training",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "diana baranova",
+  "private": false,
+  "main": [
+    "dist/tech-training.js",
+    "dist/tech-training.min.js"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ],
+  "moduleType": [
+    "globals"
+  ]
+}
