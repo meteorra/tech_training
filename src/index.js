@@ -1,6 +1,17 @@
-// Scripts
-export default from './modules/module';
-export util from './utils/util';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'react-router-redux';
+import configureStore, { history } from './redux/store/configureStore';
+import routes from "./routes";
 
-// Styles
-export styles from './assets/styles.scss';
+const store = configureStore();
+
+ReactDOM.render(
+    <Provider store={store}>
+        <ConnectedRouter history={history}>
+            {routes()}
+        </ConnectedRouter>
+    </Provider>,
+    document.getElementById('weather-forecast-app')
+);
