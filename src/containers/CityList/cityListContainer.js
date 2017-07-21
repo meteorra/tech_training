@@ -10,7 +10,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    ...bindActionCreators(actions, dispatch)
+    ...bindActionCreators(actions), dispatch
 });
 
 export default connect(

@@ -6,8 +6,8 @@ import CityDetailsContainer from './containers/CityDetails/CityDetailsContainer'
 export default function router() {
     return (
         <div>
-            <Route exact path="/" component={CityListContainer} />
-            <Route path="/:number" component={CityDetailsContainer}/>
+            <Route exact path="/" component={CityListContainer}  />
+            <Route path="/:city" component={CityDetailsContainer} />
         </div>
     )
 }

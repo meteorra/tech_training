@@ -1,3 +1,5 @@
+import CITY_LIST from '../../constants/cityList';
+
 export const types = {
     DELETE_LIST_ITEM: 'DELETE_LIST_ITEM'
 };
@@ -7,7 +9,7 @@ export const actions = {
 };
 
 const initialState = {
-    list: [{item: 'Minsk'}, {item: 'Brest'}, {item: 'Vitebsk'}]
+    list: CITY_LIST
 };
 
 export default function reducer(state = initialState, action) {
@@ -17,10 +19,7 @@ export default function reducer(state = initialState, action) {
                 {},
                 state,
                 {
-                    list: [
-                        ...state.list.slice(0, action.index),
-                        ...state.list.slice(action.index + 1)
-                    ]
+                    list: state.list.filter((item, i) => i !== action.index)
                 }
             );
         default:

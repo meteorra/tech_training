@@ -11,7 +11,7 @@ const List = (props) => {
                             key={i}>
                             <div className="form-inline">
                                 <div className="form-group">
-                                    <Link to={'/' + i}>{el.item}</Link>
+                                    <Link to={`/${el.cityCode}`}>{el.cityName}</Link>
                                     <button
                                         className="btn btn-danger pull-right"
                                         onClick={props.deleteListItem.bind(null, i)}>
