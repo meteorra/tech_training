@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import CityDetailsView from './CityDetailsView';
-import {actions} from '../../redux/modules/cityDetails';
+import {actions} from '../../redux/modules/cityDetailsModule';
 
 function mapStateToProps(state) {
-    console.log(state);
     return {
         cityDetails: state.cityDetails // gives our component access to state through props
     }

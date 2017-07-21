@@ -1,5 +1,6 @@
 import React from 'react';
-import { fetchCityForecast } from '../../redux/modules/cityDetails';
+import { fetchCityForecast } from '../../redux/modules/cityDetailsModule';
+import PropertyTable from '../../components/PropertyTableComponent';
 
 class CityDetailsView extends React.Component {
 
@@ -18,9 +19,7 @@ class CityDetailsView extends React.Component {
                         <div className="panel-body">
                             <h1>Here is {this.props.match.params.city} weather forecast</h1>
                             <hr/>
-                            <div>Current temperature: {this.props.cityDetails.forecast.temp}</div>
-                            <div>Current visibility: {this.props.cityDetails.forecast.visibility}</div>
-                            <div>Current speed of wind: {this.props.cityDetails.forecast.windSpeed}</div>
+                            <PropertyTable tableItems={this.props.cityDetails.forecast}  />
                         </div>
                     </div>
                 </div>

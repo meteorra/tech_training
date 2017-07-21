@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import CityListView from './CityListView.js'
-import {actions} from '../../redux/modules/cityList';
+import {actions} from '../../redux/modules/cityListModule';
 
 function mapStateToProps(state) {
   return {

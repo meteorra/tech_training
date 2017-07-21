@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import cityList from '../modules/cityList';
-import cityDetails from '../modules/cityDetails';
+import cityList from './cityListModule';
+import cityDetails from './cityDetailsModule';
 
 const combinedReducers = combineReducers({
     cityList,
