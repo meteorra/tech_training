@@ -1,0 +1,17 @@
+{
+    "presets": [
+        [
+            "env",
+            {
+                "targets": {
+                    "browsers": [
+                        "last 2 versions"
+                    ]
+                }
+            }
+        ],
+        "es2015-loose",
+        "stage-0",
+        "react"
+    ]
+}
