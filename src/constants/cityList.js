@@ -1,8 +1,8 @@
 export default [
-    {cityName: 'Minsk', cityCode: 'minsk'},
-    {cityName: 'Brest', cityCode: 'brest'},
-    {cityName: 'Vitebsk', cityCode: 'vitebsk'},
-    {cityName: 'Grodno', cityCode: 'grodno'},
-    {cityName: 'Gomel', cityCode: 'gomel'},
-    {cityName: 'Mogilev', cityCode: 'mogilev'}
-]
+    { cityName: 'Minsk', cityCode: 'minsk', id: 0, },
+    { cityName: 'Brest', cityCode: 'brest', id: 1, },
+    { cityName: 'Vitebsk', cityCode: 'vitebsk', id: 2, },
+    { cityName: 'Grodno', cityCode: 'grodno', id: 3, },
+    { cityName: 'Gomel', cityCode: 'gomel', id: 4, },
+    { cityName: 'Mogilev', cityCode: 'mogilev', id: 5, }
+];

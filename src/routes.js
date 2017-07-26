@@ -1,14 +1,13 @@
 import React from 'react';
 import { Route } from 'react-router';
-import CityListContainer from './containers/CityList/cityListContainer';
-import CityDetailsContainer from './containers/CityDetails/CityDetailsContainer';
+import { CitiesContainer, CityContainer } from './containers';
 
 export default function router() {
     return (
         <div>
-            <Route exact path="/" component={CityListContainer}  />
-            <Route path="/:city" component={CityDetailsContainer} />
+            <Route exact path="/" component={CitiesContainer}  />
+            <Route path="/:city" component={CityContainer} />
         </div>
-    )
+    );
 }
 

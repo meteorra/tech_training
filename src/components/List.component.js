@@ -1,20 +1,23 @@
 import React from 'react';
-import Link from 'react-router-redux-dom-link';
+import PropTypes from 'prop-types';
 
 const List = (props) => {
     return (
         <div>
             <ul>
                 {
-                    props.listItems.map((el, i) => (
+                    props.listItems.map((el) => (
                         <li
-                            key={i}>
+                            key={el.id}>
                             <div className="form-inline">
                                 <div className="form-group">
-                                    <Link to={`/${el.cityCode}`}>{el.cityName}</Link>
+                                    <a href="javascript: void(0)" onClick={() => props.changeRoute(`/${el.cityCode}`)}>
+                                        {el.cityName}
+                                    </a>
+
                                     <button
                                         className="btn btn-danger pull-right"
-                                        onClick={props.deleteListItem.bind(null, i)}>
+                                        onClick={() => props.deleteListItem(el.id)}>
                                         x
                                     </button>
                                 </div>
@@ -24,7 +27,12 @@ const List = (props) => {
                 }
             </ul>
         </div>
-    )
+    );
+};
+
+List.propTypes = {
+    listItems: PropTypes.array,
+    deleteListItem: PropTypes.func,
 };
 
 export default List;

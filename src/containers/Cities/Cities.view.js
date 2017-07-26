@@ -1,11 +1,8 @@
 import React from 'react';
-import List from '../../components/ListComponent';
+import PropTypes from 'prop-types';
+import List from '../../components/List.component';
 
-class CityListView extends React.Component {
-
-    deleteListItem = (i) => {
-        this.props.deleteListItem(i)
-    };
+class CitiesView extends React.Component {
 
     render() {
         return (
@@ -16,8 +13,9 @@ class CityListView extends React.Component {
                             <h1>Discover the weather in Belarus cities</h1>
                             <hr/>
                             <List
-                                listItems={this.props.cityList.list}
-                                deleteListItem={this.deleteListItem}
+                                changeRoute={this.props.changeRoute}
+                                listItems={this.props.cities}
+                                deleteListItem={this.props.deleteListItem}
                             />
                         </div>
                     </div>
@@ -27,4 +25,10 @@ class CityListView extends React.Component {
     }
 }
 
-export default CityListView;
+CitiesView.propTypes = {
+    changeRoute: PropTypes.func,
+    deleteListItem: PropTypes.func,
+    cities: PropTypes.array,
+};
+
+export default CitiesView;
