@@ -1,5 +1,6 @@
 import { types } from '../actions/cities.actions';
 import { initialState } from '../states/cities.state';
+import { assignNewState } from './utils';
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
@@ -8,13 +9,12 @@ export default function reducer(state = initialState, action) {
     }
 }
 
-function deleteListItem(state, action) {
-    return Object.assign(
-        {},
+function deleteListItem(state, { id: actionId, }) {
+    return assignNewState(
         state,
-        {
-            list: state.list.filter(({ id, }) => id !== action.id),
-        }
+        { list: state.list.filter(({ id, }) => id !== actionId), }
     );
 }
+
+
 

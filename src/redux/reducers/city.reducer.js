@@ -1,5 +1,6 @@
 import { types } from '../actions/city.actions';
 import { initialState } from '../states/city.state';
+import { assignNewState } from './utils';
 
 export default function reducer(state = initialState, action){
     switch(action.type) {
@@ -9,14 +10,16 @@ export default function reducer(state = initialState, action){
 }
 
 function fetchForecastSuccess(state, action) {
-    return Object.assign(
-        {},
+
+    const { forecast: { main: { temp, }, visibility, wind: { speed, }, }, } = action;
+
+    return assignNewState(
         state,
         {
             forecast: {
-                temp: action.forecast.main.temp,
-                visibility: action.forecast.visibility,
-                windSpeed: action.forecast.wind.speed,
+                temp: temp,
+                visibility: visibility,
+                windSpeed: speed,
             },
         }
     );
