@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// TODO: discuss if there are no outer dependecies should we wrap component into a function
 const List = (props) => {
     return (
         <div>
