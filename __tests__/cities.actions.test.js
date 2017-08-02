@@ -1,4 +1,5 @@
-import { actions, types } from '../src/redux/actions/cities.actions';
+import { actions } from '../src/redux/actions/cities.actions';
+import { types } from '../src/redux/constants/cities.types';
 
 describe('cities actions', () => {
 

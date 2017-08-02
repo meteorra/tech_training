@@ -1,4 +1,4 @@
-import { types } from '../actions/cities.actions';
+import { types } from '../constants/cities.types';
 import { initialState } from '../states/cities.state';
 import { assignNewState } from './utils';
 

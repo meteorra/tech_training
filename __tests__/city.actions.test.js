@@ -1,4 +1,5 @@
-import { types, fetchForecast } from '../src/redux/actions/city.actions';
+import { fetchForecast } from '../src/redux/actions/city.actions';
+import { types } from '../src/redux/constants/city.types';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import nock from 'nock';

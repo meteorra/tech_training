@@ -1,10 +1,11 @@
-import { types } from '../actions/city.actions';
+import { types } from '../constants/city.types';
 import { initialState } from '../states/city.state';
 import { assignNewState } from './utils';
 
 export default function reducer(state = initialState, action){
     switch(action.type) {
         case types.FETCH_FORECAST_SUCCESS: return fetchForecastSuccess(state, action);
+        case types.FETCH_FORECAST_FAILURE: return fetchForecastFailure(state, action);
         default: return state;
     }
 }
@@ -20,6 +21,18 @@ function fetchForecastSuccess(state, action) {
                 temp: temp,
                 visibility: visibility,
                 windSpeed: speed,
+            },
+        }
+    );
+}
+
+// Very simplified error handler for test purposes
+function fetchForecastFailure(state, { error, }) {
+    return assignNewState(
+        state,
+        {
+            forecast: {
+                error,
             },
         }
     );

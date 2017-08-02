@@ -1,5 +1,5 @@
 import reducer from '../src/redux/reducers/cities.reducer';
-import { types } from '../src/redux/actions/cities.actions';
+import { types } from '../src/redux/constants/cities.types';
 
 describe('cities reducer', () => {
 
