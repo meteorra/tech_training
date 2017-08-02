@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropertyTable component renders the table correctly renders correctly passed in table items 1`] = `
+<div
+  className="property-table"
+>
+  <div
+    className="property-table-item temp-item"
+  >
+    Current temperature: 
+    22
+  </div>
+  <div
+    className="property-table-item visibility-item"
+  >
+    Current visibility: 
+    10000
+  </div>
+  <div
+    className="property-table-item wind-item"
+  >
+    Current speed of wind: 
+    200
+  </div>
+</div>
+`;
