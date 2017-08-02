@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// TODO: discuss if there are no outer dependecies should we wrap component into a function
 const PropertyTable = ({ tableItems : { temp, visibility, windSpeed, }, }) => {
     return (
-        <div>
-            <div>Current temperature: {temp}</div>
-            <div>Current visibility: {visibility}</div>
-            <div>Current speed of wind: {windSpeed}</div>
+        <div className="property-table">
+            <div className="property-table-item temp-item">Current temperature: {temp}</div>
+            <div className="property-table-item visibility-item">Current visibility: {visibility}</div>
+            <div className="property-table-item wind-item">Current speed of wind: {windSpeed}</div>
         </div>
     );
 

@@ -7,7 +7,7 @@ import routes from './routes';
 
 const store = configureStore();
 
-ReactDOM.render(
+export default ReactDOM.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
             {routes()}

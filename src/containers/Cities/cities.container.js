@@ -10,7 +10,6 @@ function mapStateToProps(state) {
     };
 }
 
-// TODO: discuss where to store router actions? Do they tend to grow and need separate file?
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({
         changeRoute: (url) => push(url),

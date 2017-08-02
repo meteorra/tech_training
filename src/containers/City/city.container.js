@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import CityView from './City.view';
-import { actions } from '../../redux/actions/city.actions';
+import { actions, fetchForecast } from '../../redux/actions/city.actions';
 
 function mapStateToProps(state, ownProps) {
     return {
@@ -11,7 +11,10 @@ function mapStateToProps(state, ownProps) {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    ...bindActionCreators(actions, dispatch),
+    ...bindActionCreators({
+        fetchForecast: (city) => fetchForecast(city),
+        ...actions,
+    }, dispatch),
 });
 
 export default connect(

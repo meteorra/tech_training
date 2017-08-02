@@ -1,22 +1,22 @@
 import ForecastAPI from '../api/ForecastAPI';
 
 export const types = {
-    FETCH_FORECAST: 'FETCH_FORECAST',
+    FETCH_FORECAST_REQUEST: 'FETCH_FORECAST_REQUEST',
     FETCH_FORECAST_SUCCESS: 'FETCH_FORECAST_SUCCESS',
+    FETCH_FORECAST_FAILURE: 'FETCH_FORECAST_FAILURE',
 };
 
-//TODO: discuss fetchForecast action creator
 export const actions = {
-    fetchForecast: (city) => fetchForecast(city),
+    fetchForecastRequest: () => ({ type: types.FETCH_FORECAST_REQUEST, }),
     fetchForecastSuccess: (forecast) => ({ type: types.FETCH_FORECAST_SUCCESS, forecast, }),
+    fetchForecastFailure: (ex) => ({ type: types.FETCH_FORECAST_FAILURE, ex, }),
 };
 
-function fetchForecast(city) {
+export function fetchForecast(city) {
     return function(dispatch) {
+        dispatch(actions.fetchForecastRequest());
         return ForecastAPI.fetchCityForecast(city).then(forecast => {
             dispatch(actions.fetchForecastSuccess(forecast));
-        }).catch(error => {
-            throw(error);
-        });
+        }).catch(ex => dispatch(actions.fetchForecastFailure(ex)));
     };
 }

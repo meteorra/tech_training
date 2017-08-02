@@ -1,6 +1,7 @@
 const FORECAST_API_PROTOCOL = 'http://';
 const FORECAST_API_ENDPOINT = 'api.openweathermap.org';
 const FORECAST_APPID = '5f7fd37860afa128f5b86690e4c25597';
+import fetch from 'isomorphic-fetch';
 
 
 export default class ForecastApi {
