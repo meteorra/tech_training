@@ -20,7 +20,7 @@ function setup() {
 
 describe('CitiesView', () => {
 
-    it('renders h1 title "Discover the weather in Belarus cities"', () => {
+    it('renders h1 static title "Discover the weather in Belarus cities"', () => {
 
         const { render, } = setup();
         expect(render.toJSON()).toMatchSnapshot();

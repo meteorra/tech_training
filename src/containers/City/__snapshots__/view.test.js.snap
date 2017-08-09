@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CityView renders h1 title with code property "Here is minsk weather forecast" 1`] = `
+exports[`CityView renders h1 title with code property equals minsk "Here is minsk weather forecast" 1`] = `
 <div
   className="row"
 >

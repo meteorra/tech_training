@@ -19,7 +19,7 @@ function setup() {
 
 describe('CityView', () => {
 
-    it('renders h1 title with code property "Here is minsk weather forecast"', () => {
+    it('renders h1 title with code property equals minsk "Here is minsk weather forecast"', () => {
 
         const { render, } = setup();
         expect(render.toJSON()).toMatchSnapshot();

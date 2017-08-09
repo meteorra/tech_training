@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CitiesView renders h1 title "Discover the weather in Belarus cities" 1`] = `
+exports[`CitiesView renders h1 static title "Discover the weather in Belarus cities" 1`] = `
 <div
   className="row"
 >
