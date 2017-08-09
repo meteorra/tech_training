@@ -1,6 +1,6 @@
-import reducerWrap from './cities.reducer';
-import { citiesTypes as types } from '../constants';
-import { citiesState as initialState } from '../states';
+import reducerWrap from './reducer';
+import { citiesTypes as types } from '../../constants';
+import { citiesState as initialState } from '../../states';
 
 describe('cities reducer', () => {
 

@@ -1,5 +1,5 @@
-import { actions } from './cities.actions';
-import { citiesTypes as types } from '../constants';
+import { citiesActions as actions } from './actions';
+import { citiesTypes as types } from '../../constants';
 
 describe('cities actions', () => {
 

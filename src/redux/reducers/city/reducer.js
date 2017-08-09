@@ -1,5 +1,5 @@
-import { cityTypes as types } from '../constants';
-import { assignNewState } from './utils';
+import { cityTypes as types } from '../../constants';
+import { assignNewState } from '../utils';
 
 export default (initialState) => {
     return (state = initialState, action = {}) => {

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import CityView from './view';
-import { actions, fetchForecast } from '../../redux/actions/city.actions';
+import { cityActions as actions, fetchForecast } from '../../redux/actions';
 import { PropertyTable } from '../../components';
 import ForecastAPI from '../../redux/api/ForecastAPI';
 

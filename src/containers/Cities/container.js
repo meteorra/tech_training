@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import CitiesView from './view.js';
-import { actions } from '../../redux/actions/cities.actions';
+import { citiesActions as actions } from '../../redux/actions';
 import { push } from 'react-router-redux';
 import { List } from '../../components';
 

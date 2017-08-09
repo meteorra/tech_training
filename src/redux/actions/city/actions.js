@@ -1,6 +1,6 @@
-import { cityTypes as types } from '../constants';
+import { cityTypes as types } from '../../constants';
 
-export const actions = {
+const actions = {
     fetchForecastRequest: () => ({ type: types.FETCH_FORECAST_REQUEST, }),
     fetchForecastSuccess: (forecast) => ({ type: types.FETCH_FORECAST_SUCCESS, forecast, }),
     fetchForecastFailure: (error) => ({ type: types.FETCH_FORECAST_FAILURE, error, }),
@@ -14,4 +14,6 @@ export function fetchForecast(apiCall) {
         }).catch(error => dispatch(actions.fetchForecastFailure(error)));
     };
 }
+
+export { actions as cityActions };
 

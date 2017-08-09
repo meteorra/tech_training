@@ -2,6 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const List = (props) => {
+
+    const _changeRoute = (e, code) => {
+        e.preventDefault();
+        props.changeRoute(`/${code}`);
+    };
+
     const component = props.listItems.length ?
         <ul>
             {
@@ -10,7 +16,7 @@ const List = (props) => {
                         key={el.id} className="list-item city-list-item">
                         <div className="form-inline">
                             <div className="form-group">
-                                <a href="javascript: void(0)" onClick={() => props.changeRoute(`/${el.cityCode}`)}>
+                                <a href="#" onClick={(e) => _changeRoute(e, el.cityCode)}>
                                     {el.cityName}
                                 </a>
 
