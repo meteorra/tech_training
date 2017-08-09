@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List component renders a text message "No cities are available in the region." if no listItems are available 1`] = `
+<div>
+  <p>
+    No cities are available in the region.
+  </p>
+</div>
+`;
+
+exports[`List component renders correctly a list with 2 items: Minsk, Brest 1`] = `
+<div>
+  <ul>
+    <li
+      className="list-item city-list-item"
+    >
+      <div
+        className="form-inline"
+      >
+        <div
+          className="form-group"
+        >
+          <a
+            href="javascript: void(0)"
+            onClick={[Function]}
+          >
+            Minsk
+          </a>
+          <button
+            className="btn btn-danger pull-right"
+            onClick={[Function]}
+          >
+            x
+          </button>
+        </div>
+      </div>
+    </li>
+    <li
+      className="list-item city-list-item"
+    >
+      <div
+        className="form-inline"
+      >
+        <div
+          className="form-group"
+        >
+          <a
+            href="javascript: void(0)"
+            onClick={[Function]}
+          >
+            Brest
+          </a>
+          <button
+            className="btn btn-danger pull-right"
+            onClick={[Function]}
+          >
+            x
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;

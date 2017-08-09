@@ -1,0 +1,104 @@
+{
+    "name": "tech-training",
+    "description": "Training latest technologies",
+    "version": "0.0.1",
+    "author": "diana baranova",
+    "license": "MIT",
+    "homepage": "https://github.com/meteorra/tech-training",
+    "main": "dist/index.js",
+    "jsnext:main": "src/index.js",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "npmName": "tech-training",
+    "npmFileMap": [
+        {
+            "basePath": "/dist/",
+            "files": [
+                "*.js"
+            ]
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/meteorra/tech-training.git"
+    },
+    "bugs": {
+        "url": "https://github.com/meteorra/tech-training/issues"
+    },
+    "keywords": [
+        "tech-training"
+    ],
+    "scripts": {
+        "clean": "rimraf dist",
+        "dev": "webpack-dev-server --progress --colors --config webpack/webpack.config.development.babel.js",
+        "lint": "eslint ./src --fix",
+        "build": "webpack --config webpack/webpack.config.development.babel.js",
+        "serve": "webpack --config webpack/webpack.config.production.babel.js",
+        "preversion": "npm run clean && npm run lint",
+        "version": "npm run build",
+        "postversion": "git push && git push --tags && npm run clean",
+        "prepublish": "npm run clean && npm run build",
+        "start": "npm run build && npm run dev",
+        "test": "jest --config jest.config.json",
+        "test:watch": "npm test -- --watch"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.24.1",
+        "babel-core": "^6.25.0",
+        "babel-eslint": "^7.2.3",
+        "babel-jest": "^20.0.3",
+        "babel-loader": "^7.1.1",
+        "babel-preset-env": "^1.6.0",
+        "babel-preset-es2015": "^6.3.13",
+        "babel-preset-es2015-loose": "^7.0.0",
+        "babel-preset-react": "^6.3.13",
+        "babel-preset-stage-0": "^6.3.13",
+        "babel-register": "^6.24.1",
+        "browser-sync": "^2.18.12",
+        "browser-sync-webpack-plugin": "^1.2.0",
+        "css-loader": "^0.28.4",
+        "cssnano": "^3.10.0",
+        "enzyme": "^2.9.1",
+        "es5-shim": "^4.3.1",
+        "eslint": "^4.3.0",
+        "eslint-config-rackt": "^1.1.1",
+        "eslint-plugin-react": "^7.1.0",
+        "extract-text-webpack-plugin": "3.0.0-rc.2",
+        "html-webpack-plugin": "^2.29.0",
+        "jest": "^20.0.4",
+        "nock": "^9.0.14",
+        "node-sass": "^4.5.3",
+        "optimize-css-assets-webpack-plugin": "^2.0.0",
+        "react-test-renderer": "^15.6.1",
+        "redux-mock-store": "^1.2.3",
+        "rimraf": "^2.3.4",
+        "sass-loader": "^6.0.6",
+        "style-loader": "^0.18.2",
+        "webpack": "^3.1.0",
+        "webpack-dev-server": "^2.5.1"
+    },
+    "devEngines": {
+        "node": "4.x || 5.x",
+        "npm": "2.x || 3.x"
+    },
+    "dependencies": {
+        "babel-polyfill": "^6.23.0",
+        "history": "^4.6.3",
+        "install": "^0.10.1",
+        "isomorphic-fetch": "^2.2.1",
+        "npm": "^5.3.0",
+        "prop-types": "^15.5.10",
+        "react": "^15.6.1",
+        "react-css-modules": "^4.5.2",
+        "react-dom": "^15.6.1",
+        "react-hot-loader": "^1.3.1",
+        "react-redux": "^5.0.5",
+        "react-router": "^4.1.2",
+        "react-router-redux": "^5.0.0-alpha.6",
+        "redux": "^3.7.2",
+        "redux-logger": "^3.0.6",
+        "redux-thunk": "^2.2.0"
+    }
+}

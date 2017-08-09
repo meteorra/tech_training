@@ -1,0 +1,25 @@
+{
+    "verbose": true,
+    "testPathIgnorePatterns": [
+        "<rootDir>/(node_modules)",
+        "<rootDir>/(dist)",
+        "<rootDir>/(webpack)",
+        "<rootDir>/(coverage)"
+    ],
+    "moduleFileExtensions": [
+        "js",
+        "jsx"
+    ],
+    "transform": {
+        "^.+\\.(js|jsx)$": "babel-jest"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom" : [
+        "**/*.{js,jsx}",
+        "!**/coverage/**",
+        "!**/node_modules/**",
+        "!**/dist/**",
+        "!**/webpack/**"
+    ],
+    "coverageDirectory": "coverage"
+}
