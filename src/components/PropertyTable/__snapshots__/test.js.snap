@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropertyTable component renders correctly certain values of temp, visibility & windSpeed 1`] = `
+<div
+  className="property-table"
+>
+  <div
+    className="property-table-item temp-item"
+  >
+    Current temperature: 
+    20
+  </div>
+  <div
+    className="property-table-item visibility-item"
+  >
+    Current visibility: 
+    100
+  </div>
+  <div
+    className="property-table-item wind-item"
+  >
+    Current speed of wind: 
+    1000
+  </div>
+</div>
+`;

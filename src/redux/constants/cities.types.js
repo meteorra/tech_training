@@ -1,3 +1,3 @@
-export const types = {
+export default {
     DELETE_LIST_ITEM: 'DELETE_LIST_ITEM',
 };

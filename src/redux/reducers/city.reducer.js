@@ -1,14 +1,15 @@
-import { types } from '../constants/city.types';
-import { initialState } from '../states/city.state';
+import { cityTypes as types } from '../constants';
 import { assignNewState } from './utils';
 
-export default function reducer(state = initialState, action){
-    switch(action.type) {
-        case types.FETCH_FORECAST_SUCCESS: return fetchForecastSuccess(state, action);
-        case types.FETCH_FORECAST_FAILURE: return fetchForecastFailure(state, action);
-        default: return state;
-    }
-}
+export default (initialState) => {
+    return (state = initialState, action = {}) => {
+        switch(action.type) {
+            case types.FETCH_FORECAST_SUCCESS: return fetchForecastSuccess(state, action);
+            case types.FETCH_FORECAST_FAILURE: return fetchForecastFailure(state, action);
+            default: return state;
+        }
+    };
+};
 
 function fetchForecastSuccess(state, action) {
 

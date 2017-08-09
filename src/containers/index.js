@@ -1,2 +1,3 @@
-export CitiesContainer from './Cities/cities.container';
-export CityContainer from './City/city.container';
+export CitiesContainer from './Cities';
+export CityContainer from './City';
+

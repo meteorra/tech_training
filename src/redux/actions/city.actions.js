@@ -1,5 +1,4 @@
-import ForecastAPI from '../api/ForecastAPI';
-import { types } from '../constants/city.types';
+import { cityTypes as types } from '../constants';
 
 export const actions = {
     fetchForecastRequest: () => ({ type: types.FETCH_FORECAST_REQUEST, }),
@@ -7,11 +6,12 @@ export const actions = {
     fetchForecastFailure: (error) => ({ type: types.FETCH_FORECAST_FAILURE, error, }),
 };
 
-export function fetchForecast(city) {
-    return function(dispatch) {
+export function fetchForecast(apiCall) {
+    return (dispatch) => {
         dispatch(actions.fetchForecastRequest());
-        return ForecastAPI.fetchCityForecast(city).then(forecast => {
+        return apiCall.then(forecast => {
             dispatch(actions.fetchForecastSuccess(forecast));
         }).catch(error => dispatch(actions.fetchForecastFailure(error)));
     };
 }
+
