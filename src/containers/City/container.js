@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import CityView from './view';
+import View from './view';
 import { cityActions as actions, fetchForecast } from '../../redux/actions';
 import { PropertyTable } from '../../components';
-import ForecastAPI from '../../redux/api/ForecastAPI';
+import ForecastAPI from '../../redux/api';
 
 function mapStateToProps(state, ownProps) {
     return {
@@ -22,5 +22,5 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(CityView(PropertyTable));
+)(View(PropertyTable));
 

@@ -11,21 +11,23 @@ describe('cities reducer', () => {
     });
 
     it('deletes list item with the corresponding id on DELETE_LIST_ITEM action', () => {
+
+        const list = [
+            { cityName: 'Minsk', cityCode: 'minsk', id: 0, },
+            { cityName: 'Brest', cityCode: 'brest', id: 1, }
+        ];
+
+
         expect(
             reducer({
-                list: [
-                    { cityName: 'Minsk', cityCode: 'minsk', id: 0, },
-                    { cityName: 'Brest', cityCode: 'brest', id: 1, }
-                ],
+                list,
             },
             {
                 type: types.DELETE_LIST_ITEM,
                 id: 1,
             })
         ).toEqual({
-            list: [
-                { cityName: 'Minsk', cityCode: 'minsk', id: 0, }
-            ],
+            list: [list[0]],
         });
     });
 });

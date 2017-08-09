@@ -12,7 +12,7 @@ describe('city reducer', () => {
 
     it('updates forecast object with corresponding data on FETCH_FORECAST_SUCCESS action', () => {
         expect(
-            reducer(initialState,
+            reducer({},
                 {
                     type: types.FETCH_FORECAST_SUCCESS,
                     forecast: {
@@ -30,15 +30,18 @@ describe('city reducer', () => {
     });
 
     it('updates forecast object with error property on FETCH_FORECAST_FAILURE action', () => {
+
+        const error = 'some error';
+
         expect(
-            reducer(initialState,
+            reducer({},
                 {
                     type: types.FETCH_FORECAST_FAILURE,
-                    error: 'some error',
+                    error,
                 })
         ).toEqual({
             forecast: {
-                error: 'some error',
+                error,
             },
         });
     });
