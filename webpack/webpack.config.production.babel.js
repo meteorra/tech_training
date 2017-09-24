@@ -13,7 +13,8 @@ config.plugins.push(...[
             warnings: false
         },
         include: /\.js$/,
-        minimize: true
+        minimize: true,
+        comments: false
     }),
     new OptimizeCssAssetsPlugin({
         assetNameRegExp: /tech-training.css$/,

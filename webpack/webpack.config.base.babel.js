@@ -6,7 +6,7 @@ export default {
     entry: ['babel-polyfill', './src/index.js'],
     output: {
         filename: 'tech-training.js',
-        publicPath: '/assets/',
+        publicPath: '/',
         path: path.join(__dirname, '..', 'dist')
     },
     resolve: {

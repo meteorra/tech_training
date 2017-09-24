@@ -5,3 +5,4 @@ export function assignNewState(state, newState) {
         newState
     );
 }
+
