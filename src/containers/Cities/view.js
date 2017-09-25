@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export default (List) => {
-    class CitiesView extends React.Component {
+    class CitiesView extends Component {
 
         render() {
+            const {changeRoute, cities, deleteListItem} = this.props;
+
             return (
                 <div className="row">
                     <div className="col-md-8 col-md-offset-2">
@@ -13,9 +15,9 @@ export default (List) => {
                                 <h1>Discover the weather in Belarus cities</h1>
                                 <hr/>
                                 <List
-                                    changeRoute={this.props.changeRoute}
-                                    listItems={this.props.cities}
-                                    deleteListItem={this.props.deleteListItem}
+                                    changeRoute={changeRoute}
+                                    listItems={cities}
+                                    deleteListItem={deleteListItem}
                                 />
                             </div>
                         </div>

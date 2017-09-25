@@ -1,24 +1,21 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import viewWrapper from './view';
-import { citiesActions as actions } from '../../redux/actions';
 import { push } from 'react-router-redux';
-import { List } from '../../components';
 
 function mapStateToProps(state) {
     return {
-        cities: state.cities.list, // gives our component access to state through props
+        menus: state.cities.list,
     };
 }
 
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({
         changeRoute: (url) => push(url),
-        ...actions,
     }, dispatch),
 });
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(viewWrapper(List));
+)(viewWrapper());

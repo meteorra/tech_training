@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './styles.scss';
 
-const List = (props) => {
+const List = ({listItems, changeRoute, deleteListItem}) => {
 
     const _changeRoute = (e, code) => {
         e.preventDefault();
-        props.changeRoute(`/${code}`);
+        changeRoute(`/${code}`);
     };
 
-    const component = props.listItems.length ?
-        <ul>
+    const component = listItems.length ?
+        <ul className="list city-list">
             {
-                props.listItems.map((el) => (
+                listItems.map((el) => (
                     <li
                         key={el.id} className="list-item city-list-item">
                         <div className="form-inline">
@@ -21,10 +22,10 @@ const List = (props) => {
                                 </a>
 
                                 <button
-                                    className="btn btn-danger pull-right"
-                                    onClick={() => props.deleteListItem(el.id)}>
-                                    x
-                                </button>
+                                className="btn btn-danger pull-right"
+                                onClick={() => deleteListItem(el.id)}>
+                                x
+                            </button>
                             </div>
                         </div>
                     </li>
