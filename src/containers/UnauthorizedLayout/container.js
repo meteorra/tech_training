@@ -4,7 +4,6 @@ import viewWrapper from './view';
 
 function mapStateToProps(state) {
     return {
-        menus: state.cities.list,
     };
 }
 

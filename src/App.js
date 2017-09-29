@@ -1,20 +1,12 @@
-import React from 'react';
-import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
-import configureStore, { history } from './redux/store/configureStore';
-import routes from './routes';
-
-const store = configureStore();
+import React, { Component } from 'react';
+import configureStore from './redux/store/configureStore';
+import { PrimaryLayout } from './containers';
 
 
-export default class App extends React.Component {
+export const store = configureStore();
+
+export default class App extends Component {
     render() {
-        return (
-            <Provider store={store}>
-                <ConnectedRouter history={history}>
-                    {routes()}
-                </ConnectedRouter>
-            </Provider>
-        );
+        return (<PrimaryLayout store={store} />);
     }
 }

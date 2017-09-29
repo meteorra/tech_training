@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import viewWrapper from './view';
 
-function mapStateToProps(state) {
+function mapStateToProps({ login }) {
     return {
-        menus: state.cities.list,
+        isFetching: login.isFetching,
+        isAuthenticated: login.isAuthenticated,
     };
 }
 

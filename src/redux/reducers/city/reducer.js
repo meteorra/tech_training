@@ -1,7 +1,18 @@
+import { combineReducers } from 'redux';
+import { forecastState, detailsState } from '../../states';
 import { cityTypes as types } from '../../constants';
 import { assignNewState } from '../utils';
 
-export default (initialState) => {
+const cityCode = (initialState) => {
+    return (state = initialState, action = {}) => {
+        switch(action.type) {
+            case types.FETCH_FORECAST_REQUEST: return fetchForecastRequest(state, action);
+            default: return state;
+        }
+    };
+};
+
+const forecast = (initialState) => {
     return (state = initialState, action = {}) => {
         switch(action.type) {
             case types.FETCH_FORECAST_SUCCESS: return fetchForecastSuccess(state, action);
@@ -11,6 +22,17 @@ export default (initialState) => {
     };
 };
 
+const city = combineReducers({
+    cityCode: cityCode(detailsState),
+    forecast: forecast(forecastState),
+});
+
+export default city;
+
+function fetchForecastRequest(state, action) {
+    return action.city;
+}
+
 function fetchForecastSuccess(state, action) {
 
     const { forecast: { main: { temp, }, visibility, wind: { speed, }, }, } = action;
@@ -18,12 +40,10 @@ function fetchForecastSuccess(state, action) {
     return assignNewState(
         state,
         {
-            forecast: {
-                temp: temp,
-                visibility: visibility,
-                windSpeed: speed,
-            },
-        }
+            temp: temp,
+            visibility: visibility,
+            windSpeed: speed,
+        },
     );
 }
 
@@ -32,9 +52,7 @@ function fetchForecastFailure(state, { error, }) {
     return assignNewState(
         state,
         {
-            forecast: {
-                error,
-            },
-        }
+            error,
+        },
     );
 }

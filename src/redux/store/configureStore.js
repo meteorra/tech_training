@@ -1,19 +1,36 @@
 import { createStore, applyMiddleware } from 'redux';
-import createHistory from 'history/createBrowserHistory';
-import { routerMiddleware } from 'react-router-redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
+import { loadState, saveState } from '../../localStorage';
+import throttle from 'lodash/throttle';
+import authMiddleware from '../middleware/api';
 
-// Create a history of your choosing (we're using a browser history in this case)
-export const history = createHistory();
+const configureStore = () => {
 
-// Build the middleware for intercepting and dispatching navigation actions
-const router = routerMiddleware(history);
+    const persistedState = loadState();
+    let middlewares = [thunk, authMiddleware];
 
-const createStoreWithMiddleware = applyMiddleware(...[logger, thunk, router])(createStore);
+    if(process.env.NODE_ENV !== 'production') {
+        // order of applying middlewares matters
+        // first goes thunk, then logger
+        middlewares.push(logger);
+    }
 
-const configureStore = (initialState) => createStoreWithMiddleware(rootReducer, initialState);
+    const store = createStore(
+        rootReducer,
+        persistedState,
+        applyMiddleware(...middlewares)
+    );
+
+    store.subscribe(throttle(() => {
+        saveState('state', {
+            cities: store.getState().cities,
+        });
+    }, 1000));
+
+    return store;
+};
 
 export default configureStore;
 

@@ -1,14 +1,18 @@
 import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
-import cities from './cities/reducer';
+import cities, { getCityFromCities } from './cities/reducer';
 import city from './city/reducer';
-import { citiesState, cityState } from '../states';
+import login, { getLoginToken, getUserStatusFromLogin } from './login/reducer';
+import { citiesState, loginState } from '../states';
 
 const combinedReducers = combineReducers({
     cities: cities(citiesState),
-    city: city(cityState),
-    router: routerReducer,
+    login: login(loginState),
+    city,
 });
+
+export const getToken = (state) => getLoginToken(state);
+export const getCity = (state, code) => getCityFromCities(state, code);
+export const getUserStatus = (state, code) => getUserStatusFromLogin(state, code);
 
 export default combinedReducers;
 

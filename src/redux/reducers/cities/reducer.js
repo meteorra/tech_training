@@ -10,11 +10,12 @@ export default (initialState) => {
     };
 };
 
+export const getCityFromCities = (state, code) => {
+    return state.cities.find(el => el.cityCode === code);
+};
+
 function deleteListItem(state, { id: actionId, }) {
-    return assignNewState(
-        state,
-        { list: state.list.filter(({ id, }) => id !== actionId), }
-    );
+    return state.filter(({ id, }) => id !== actionId);
 }
 
 

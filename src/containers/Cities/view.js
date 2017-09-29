@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import Login from '../Login';
 
 export default (List) => {
     class CitiesView extends Component {
 
         render() {
-            const {changeRoute, cities, deleteListItem} = this.props;
+            const { cities, deleteListItem } = this.props;
 
             return (
                 <div className="row">
@@ -15,7 +17,6 @@ export default (List) => {
                                 <h1>Discover the weather in Belarus cities</h1>
                                 <hr/>
                                 <List
-                                    changeRoute={changeRoute}
                                     listItems={cities}
                                     deleteListItem={deleteListItem}
                                 />
@@ -28,7 +29,6 @@ export default (List) => {
     }
 
     CitiesView.propTypes = {
-        changeRoute: PropTypes.func,
         deleteListItem: PropTypes.func,
         cities: PropTypes.array,
     };
