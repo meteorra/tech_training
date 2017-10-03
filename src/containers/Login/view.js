@@ -7,24 +7,18 @@ import Auth from '../../oauth';
 export default () => {
     class Login extends Component {
 
-        constructor() {
-            super();
-            this.state = {
-                username: '',
-                password: '',
-            };
-            this.handleChange = this.handleChange.bind(this);
-            this.handleSubmit = this.handleSubmit.bind(this);
-            this.onClick = this.onClick.bind(this);
-        }
+        state = {
+            username: '',
+            password: '',
+        };
 
-        handleChange(e) {
+        handleChange = (e) => {
             this.setState({
                 [e.target.name]: e.target.value
             });
-        }
+        };
 
-        handleSubmit(e) {
+        handleSubmit = (e) => {
             e.preventDefault();
             this.props.loginUser({
                 username: this.state.username,
@@ -32,7 +26,7 @@ export default () => {
             }).then(() => {
                 this.props.history.push('/app');
             })
-        }
+        };
 
         onClick(e) {
             // oAuth authentication
