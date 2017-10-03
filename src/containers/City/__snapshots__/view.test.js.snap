@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CityView renders h1 title with code property equals minsk "Here is minsk weather forecast" 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="col-md-8 col-md-offset-2"
+  >
+    <div
+      className="panel panel-default"
+    >
+      <div
+        className="panel-body"
+      >
+        <h1>
+          Here is 
+          minsk
+           weather forecast
+        </h1>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>
+`;
