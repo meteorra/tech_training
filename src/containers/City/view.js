@@ -9,7 +9,10 @@ export default (PropertyTable) => {
         }
 
         render(){
-            const {code, forecast, cityName} = this.props;
+            const {
+                forecast,
+                cityName,
+            } = this.props;
 
             return (
                 <div className="row">
@@ -18,7 +21,7 @@ export default (PropertyTable) => {
                             <div className="panel-body">
                                 <h1>Here is {cityName} weather forecast</h1>
                                 <hr/>
-                                <PropertyTable tableItems={forecast}  />
+                                <PropertyTable isLoading={forecast.isFetching} tableItems={forecast}  />
                             </div>
                         </div>
                     </div>
@@ -30,6 +33,7 @@ export default (PropertyTable) => {
     CityView.propTypes = {
         fetchForecast: PropTypes.func,
         code: PropTypes.string,
+        cityName: PropTypes.string,
         forecast: PropTypes.object,
     };
 

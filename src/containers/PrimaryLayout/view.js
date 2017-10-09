@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+
 import {
     UnauthorizedLayout,
     AuthorizedRoute,
     AuthorizedLayout,
-    Login,
+    AuthDoor,
 } from '../../containers';
 
 export default () => {
@@ -18,7 +19,7 @@ export default () => {
                         <div className="primary-layout">
                             <header>
                                 <nav className="header-nav">Any menu</nav>
-                                <Login />
+                                <AuthDoor />
                             </header>
                             <main>
                                 <Switch>

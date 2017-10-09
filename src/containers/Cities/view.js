@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Login from '../Login';
 
 export default (List) => {
     class CitiesView extends Component {

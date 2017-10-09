@@ -3,9 +3,21 @@ import ForecastAPI from '../../api/ForecastAPI';
 import { getToken } from '../../reducers';
 
 const actions = {
-    fetchForecastRequest: (city) => ({ type: types.FETCH_FORECAST_REQUEST, city }),
-    fetchForecastSuccess: (forecast) => ({ type: types.FETCH_FORECAST_SUCCESS, forecast, }),
-    fetchForecastFailure: (error) => ({ type: types.FETCH_FORECAST_FAILURE, error, }),
+    fetchForecastRequest: (city) => ({
+        type: types.FETCH_FORECAST_REQUEST,
+        isFetching: true,
+        city
+    }),
+    fetchForecastSuccess: (forecast) => ({
+        type: types.FETCH_FORECAST_SUCCESS,
+        isFetching: false,
+        forecast,
+    }),
+    fetchForecastFailure: (error) => ({
+        type: types.FETCH_FORECAST_FAILURE,
+        isFetching: false,
+        error,
+    }),
 };
 
 export function fetchForecast(city) {
@@ -18,8 +30,5 @@ export function fetchForecast(city) {
     };
 }
 
-function generateAPIRequest(){
-
-}
 export { actions as cityActions };
 

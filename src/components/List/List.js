@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from './styles.scss';
 
-const List = ({listItems, deleteListItem}) => {
+const List = ({ listItems, deleteListItem, }) => {
 
     const component = listItems.length ?
         <ul className="list city-list">
@@ -16,10 +16,10 @@ const List = ({listItems, deleteListItem}) => {
                                 <Link to={`/${el.cityCode}`}>{el.cityName}</Link>
 
                                 <button
-                                className="btn btn-danger pull-right"
-                                onClick={() => deleteListItem(el.id)}>
-                                x
-                            </button>
+                                    className="btn btn-danger pull-right"
+                                    onClick={() => deleteListItem(el.id)}>
+                                    x
+                                </button>
                             </div>
                         </div>
                     </li>

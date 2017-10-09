@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import testImage from './test.png';
 import styles from './styles.scss';
+import withLoadingSpinner from '../LoadingHOC/LoadingHOC';
 
-const PropertyTable = ({ tableItems : { temp, visibility, windSpeed, }, }) => {
+let PropertyTable = ({ tableItems : { temp, visibility, windSpeed, }, }) => {
     return (
         <div className="property-table">
             <div className="property-table-item temp-item">Current temperature: {temp}</div>
@@ -22,5 +23,11 @@ PropertyTable.propTypes = {
         windSpeed: PropTypes.number,
     }),
 };
+
+const enhance = withLoadingSpinner(
+    props => props.isLoading
+);
+
+PropertyTable = enhance(PropertyTable);
 
 export default PropertyTable;

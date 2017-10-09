@@ -1,3 +1,4 @@
+//flow
 import { citiesTypes as types } from '../../constants';
 
 const actions = {
